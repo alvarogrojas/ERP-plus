@@ -1,0 +1,6 @@
+
+
+ALTER TABLE session_pos ADD monto_transferencia_bancaria double;
+
+
+

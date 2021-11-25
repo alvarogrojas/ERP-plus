@@ -1,0 +1,8 @@
+
+
+ALTER TABLE unidad_medida ADD estado enum('Activo','Inactivo') NOT NULL DEFAULT 'Activo';
+
+
+
+
+

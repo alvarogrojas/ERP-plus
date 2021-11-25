@@ -1,0 +1,2 @@
+ALTER TABLE bodega ADD manejo_precio enum('Precio Mayor', 'Precio Ponderado', 'Actualiza Precio') NOT NULL DEFAULT 'Precio Mayor';
+

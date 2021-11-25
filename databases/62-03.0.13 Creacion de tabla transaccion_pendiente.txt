@@ -1,0 +1,20 @@
+
+CREATE TABLE `transaccion_pendiente` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `invoice_id` int(10) unsigned NOT NULL,
+  `status` enum('ESPERA','ENVIANDO','ACEPTADA','FALLO') NOT NULL DEFAULT 'ESPERA',
+  `tipo` enum('FE','TIQUETE') DEFAULT NULL,
+  `fecha_ingreso` date NOT NULL,
+  `fecha_ultima_actualizacion` date DEFAULT NULL,
+  `ingresada_por` int(10) unsigned NOT NULL,
+  `tipo_envio` enum('INMEDIATO','ASINCRONO') NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_transaccion_pendiente_invoice` (`invoice_id`),
+  KEY `fk_transaccion_pendiente_ingresada_por_user` (`ingresada_por`),
+  CONSTRAINT `fk_transaccion_pendiente_ingresada_por_user` FOREIGN KEY (`ingresada_por`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_transaccion_pendiente_invoice` FOREIGN KEY (`invoice_id`) REFERENCES `invoice` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+

@@ -1,0 +1,20 @@
+
+
+INSERT INTO general_parameter
+values(0,
+	1,
+	'DEFAULT_CX_LITE_DETAIL',
+      '1',
+	'',
+	'Activo',
+	'Menos columnas para los detalles de CxP',
+	current_date() ,
+	1,
+	current_date() ,
+	'INTEGER',
+	1);
+
+alter table bill_pay change ingresado_bodega ingresado_bodega tinyint(1) default 0;
+	
+	
+	

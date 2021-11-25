@@ -1,0 +1,2 @@
+ALTER TABLE devolucion_detalle MODIFY motivo_id int UNSIGNED NULL; 
+

@@ -1,0 +1,41 @@
+
+
+
+/* TODO: Descomentar para crear cost center de traslados */
+insert into costs_center
+( id, name, description,
+ code,`type`, state,
+ created_date,  last_updated_date, client_id,
+ last_updated_by_id, created_by_id, contact_id,
+ total_budgeted, total_budgeted_materials, in_purchase_order
+) 
+values(
+	(select max(c.id)+1 from costs_center c), 'Traslados', 'Para asignar a los traslados del sistema',
+	'TRASLADOS',  'proyecto', 'ACTIVO',
+	current_date() , current_date(), (select max(cl.client_id) from client cl),
+	1, 1, (select (max(cc.id) ) from contact_client cc),
+	0,0,false);
+
+
+
+/* TODO : Descomentar y configurar valores */
+INSERT INTO general_parameter
+values(0,
+	1,
+	'DEFAULT_COSTS_CENTER_TRASLADO',
+      'Centro costos default para hacer traslados',
+	'DEFAULT_COSTS_CENTER_TRASLADO',
+	'Activo',
+	'ID del centro de costos para traslados',
+	current_date() ,
+	1,
+	current_date() ,
+	'INTEGER',
+	(select max(cc.id) from costs_center cc));
+
+	
+	
+	
+	
+	
+	

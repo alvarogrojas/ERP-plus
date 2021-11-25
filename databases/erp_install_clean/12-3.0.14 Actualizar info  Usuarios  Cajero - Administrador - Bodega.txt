@@ -1,0 +1,76 @@
+-- Scripts para actualizar datos de los usuarios Cajero, Administrador, Bodega
+
+/*TODO : Descomentar cada update para actualizar la información de los usuarios genericos
+         para Administrador, Cajero y Bodega
+*/
+
+-- TODO: Descomente y defina los datos mas relevantes para el usuario Cajero 
+
+
+/*update user
+set email = 'cajero@mail.com' -- ACtualice el correo del usuario generico cajero si el cliente asi lo solicita
+ where name = 'Cajero';*/
+
+
+/*update user 
+set display_name = 'Cajero' -- ACtualice el nombre que la aplicación va a mostrar para este usuario si el cliente lo solicita
+where name = 'Cajero';*/
+
+
+/*update user 
+set address = 'Ciudad Quesada, San Carlos, Alajuela' -- ACtualice la dirección del usuario cajero  si el cliente así lo solicita
+where name = 'Cajero';*/
+
+/*update user 
+set phone = '12445' -- Actualice  el telefono del cajero si cliente así lo solicita;
+where name = 'Cajero';*/
+
+
+-- TODO: Descomente y defina los datos mas relevantes para el usuario Administrador 
+
+
+/*update user
+set email = 'admin@mail.com' -- ACtualice el correo del usuario generico cajero si el cliente asi lo solicita
+ where name = 'Administrador';*/
+
+
+/*update user 
+set display_name = 'Administrador' -- ACtualice el nombre que la aplicación va a mostrar para este usuario si el cliente lo solicita
+where name = 'Administrador';*/
+
+
+/*update user 
+set address = 'Ciudad Quesada, San Carlos, Alajuela' -- ACtualice la dirección del usuario cajero  si el cliente así lo solicita
+where name = 'Administrador';*/
+
+/*update user 
+set phone = '12445' -- Actualice  el telefono del cajero si cliente así lo solicita;
+where name = 'Administrador';*/
+  
+
+
+-- TODO: Descomente y defina los datos mas relevantes para el usuario Bodega 
+
+
+/*update user
+set email = 'bodega@mail.com' -- ACtualice el correo del usuario generico cajero si el cliente asi lo solicita
+ where name = 'Bodega';*/
+
+
+/*update user 
+set display_name = 'Bodega' -- ACtualice el nombre que la aplicación va a mostrar para este usuario si el cliente lo solicita
+where name = 'Bodega';*/
+
+
+/*update user 
+set address = 'Ciudad Quesada, San Carlos, Alajuela' -- ACtualice la dirección del usuario cajero  si el cliente así lo solicita
+where name = 'Bodega';*/
+
+/*update user 
+set phone = '12445' -- Actualice  el telefono del cajero si cliente así lo solicita;
+where name = 'Bodega';*/
+
+
+
+
+

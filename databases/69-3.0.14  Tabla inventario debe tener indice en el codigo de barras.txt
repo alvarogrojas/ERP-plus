@@ -1,0 +1,1 @@
+CREATE INDEX idx_inventario_barcode ON inventario ( barcode ) USING HASH;

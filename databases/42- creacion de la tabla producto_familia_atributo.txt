@@ -1,0 +1,19 @@
+
+CREATE TABLE `producto_familia_atributo` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `atributo_id` int(10) unsigned DEFAULT NULL,
+  `producto_id` int(11) DEFAULT NULL,
+  `atributo_detalle_selected_id` int(10) unsigned DEFAULT NULL,
+  `estado` enum('Activo','Inactivo') DEFAULT 'Activo',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unq_producto_familia_atributo` (`atributo_id`,`producto_id`,`atributo_detalle_selected_id`),
+  KEY `fk_producto_familia_atributo_producto` (`producto_id`),
+  KEY `fk_producto_familia_atributo_atributo_detalle` (`atributo_detalle_selected_id`),
+  CONSTRAINT `fk_producto_familia_atributo_atributo` FOREIGN KEY (`atributo_id`) REFERENCES `atributo` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_producto_familia_atributo_atributo_detalle` FOREIGN KEY (`atributo_detalle_selected_id`) REFERENCES `atributo_detalle` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_producto_familia_atributo_producto` FOREIGN KEY (`producto_id`) REFERENCES `producto` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+

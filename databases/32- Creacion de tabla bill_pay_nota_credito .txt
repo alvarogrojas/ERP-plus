@@ -1,0 +1,32 @@
+CREATE TABLE `bill_pay_nota_credito` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `bill_pay_id` int(10) unsigned NOT NULL,
+  `number` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `sub_total` double NOT NULL DEFAULT '0',
+  `iv` double NOT NULL DEFAULT '0',
+  `total` double NOT NULL DEFAULT '0',
+  `status` enum('Emitida','Edicion') NOT NULL DEFAULT 'Edicion',
+  `provider_id` int(10) unsigned DEFAULT NULL,
+  `currency_id` int(10) unsigned DEFAULT '1',
+  `user_id` int(10) unsigned DEFAULT NULL,
+  `create_at` date DEFAULT NULL,
+  `update_at` date DEFAULT NULL,
+  `clave` varchar(64) DEFAULT NULL,
+  `codigo` varchar(2) DEFAULT '01',
+  `tipo_actividad_economica_id` int(10) unsigned DEFAULT NULL,
+  `exonerated` double DEFAULT '0',
+  `salida_bodega` tinyint(4) NOT NULL DEFAULT '0',
+  `discount_total` double DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `fk_bill_pay_nota_credito_provider` (`provider_id`),
+  KEY `fk_bill_pay_nota_credito_user` (`user_id`),
+  KEY `fk_bill_pay_nota_credito_tipo_actividad_economica` (`tipo_actividad_economica_id`),
+  CONSTRAINT `fk_bill_pay_nota_credito_provider` FOREIGN KEY (`provider_id`) REFERENCES `provider` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_bill_pay_nota_credito_tipo_actividad_economica` FOREIGN KEY (`tipo_actividad_economica_id`) REFERENCES `tipo_actividad_economica` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_bill_pay_nota_credito_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+

@@ -1,0 +1,89 @@
+
+-- cliente generico interno para compras (En ingrpro ya existe por lo que se commenta)
+
+/* TODO : Descomentar y configurar valores  para crearlo*/
+ /*
+INSERT INTO client
+	( client_id, name, address,
+       description, phone, score,
+      `createdDate`, enterprice_id, credit_day,
+      status, update_date, email,
+     exonerated, id_type, nacional, 
+     provincia_cr_id, canton_cr_id, distrito_cr_id)
+ VALUES ((select (max(c.client_id) + 1) from client c), 'CLIENTE INTERNO', 'Belen y Cartago',
+         'Cliente Interno Generico para ventas', 'Cliente Interno' , '2573-0487', 
+          current_date(), null, 0,
+          'Activo',  current_date(), 'info@ingpro-tec.com',
+          'NO', '02', true,
+          null, null, null );
+*/
+
+/* TODO : Descomentar y configurar valores para crearlo*/
+/*
+
+INSERT INTO contact_client
+	( id, name, address, email, department, phone1, phone2, phone3, client_id, user_id, `status`) 
+VALUES ( 0,'Contacto cliente interno', '', '', '', '', '', '', (select (max(c.client_id)) from client c), 1, 'Activo' );
+
+*/
+
+-- centro de costo para compras por default, el cliente en este caso es el id 2(ingpro)
+/* TODO : Descomentar y configurar valores para crearlo */
+insert into costs_center
+( id, name, description,
+ code,`type`, state,
+ created_date,  last_updated_date, client_id,
+ last_updated_by_id, created_by_id, contact_id,
+ total_budgeted, total_budgeted_materials, in_purchase_order
+) 
+values(
+	(select max(c.id)+1 from costs_center c), 'Compras', 'Para asignar las compras del sistema',
+	'COMPRAS',  'proyecto', 'ACTIVO',
+	current_date() , current_date(), (select max(cl.client_id) from client cl), -- En ingpro se sabe que el id es 2, debe hacerlo con el max si es una implantacion desde cero
+	1, 1, /*(select (max(cc.id) ) from contact_client cc)*/,
+	0,0,false);
+
+/* TODO : Descomentar y configurar valores para crearlo */  
+
+/*
+INSERT INTO general_parameter
+values(0,
+	1,
+	'DEFAULT_COSTS_CENTER_BILLING',
+      'Centro costos default para hacer compras',
+	'DEFAULT_COSTS_CENTER_BILLING',
+	'Activo',
+	'ID del centro de costos para compras',
+	current_date() ,
+	1,
+	current_date() ,
+	'INTEGER',
+	/*(select max(cc.id) from costs_center cc)*/);
+
+*/
+
+/* TODO : Descomentar y configurar valores */
+
+/*
+INSERT INTO general_parameter
+values(0,
+	1,
+	'DEFAULT_CUSTOMER_BILLING',
+      'Cliente default para compras',
+	'DEFAULT_CUSTOMER_BILLING',
+	'Activo',
+	'ID del cliente default para compras',
+	current_date() ,
+	1,
+	current_date() ,
+	'INTEGER',
+	/*(select max(cl.client_id) from client cl)*/); -- En ingpro se conoce que es el id 2, debe hacerlo con el max si es una implantacion desde cero
+	
+	
+*/	
+
+	
+	
+	
+	
+	

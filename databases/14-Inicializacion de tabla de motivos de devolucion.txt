@@ -1,0 +1,12 @@
+INSERT INTO motivo_devolucion
+	( id, nombre, estado, ingresa_bodega) 
+VALUES ( 0, 'Daño', 'Activo', false);
+
+INSERT INTO motivo_devolucion
+	( id, nombre, estado, ingresa_bodega) 
+VALUES ( 0, 'Insatisfacción', 'Activo', true);
+
+INSERT INTO motivo_devolucion
+	( id, nombre, estado, ingresa_bodega) 
+VALUES ( 0, 'Sobrante', 'Activo', true);
+

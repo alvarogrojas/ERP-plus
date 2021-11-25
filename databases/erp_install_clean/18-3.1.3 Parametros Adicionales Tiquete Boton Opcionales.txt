@@ -1,0 +1,79 @@
+
+
+INSERT INTO general_parameter
+	( id,
+      idx,
+      code,
+      val,
+      name,
+     `status`,
+      description,
+      create_date,
+      id_user,
+  update_date,
+       `type`,
+      int_val)
+VALUES ( 0,
+         1,
+        'POS_TIQUETE_BOTTOM_1',
+        '** IMPUESTO DE VENTA INCLUIDO **',
+        'Footer POS 1', -- nombre del parametro
+        'Activo',
+        'Leyenda Adicional para cliente 1',
+        current_date(),
+        1,
+        current_date(),
+        'STRING',
+        null );
+
+INSERT INTO general_parameter
+	( id,
+      idx,
+      code,
+      val,
+      name,
+     `status`,
+      description,
+      create_date,
+      id_user,
+  update_date,
+       `type`,
+      int_val)
+VALUES ( 0,
+         1,
+        'POS_TIQUETE_BOTTOM_2',
+        'Cambios solo de Contado: 8 dias habiles con factura.',
+        'Footer POS 2', -- nombre del parametro
+        'Activo',
+        'Leyenda Adicional para cliente 2',
+        current_date(),
+        1,
+        current_date(),
+        'STRING',
+        null );
+
+INSERT INTO general_parameter
+	( id,
+      idx,
+      code,
+      val,
+      name,
+     `status`,
+      description,
+      create_date,
+      id_user,
+  update_date,
+       `type`,
+      int_val)
+VALUES ( 0,
+         1,
+        'POS_TIQUETE_BOTTOM_3',
+        'Expiracion de Apartados : 30 dias habiles.',
+        'Footer POS 3', -- nombre del parametro
+        'Activo',
+        'Leyenda Adicional para cliente 3',
+        current_date(),
+        1,
+        current_date(),
+        'STRING',
+        null );

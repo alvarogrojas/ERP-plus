@@ -1,0 +1,27 @@
+INSERT INTO general_parameter (id,
+   idx,
+   code,
+   val,
+   name,
+   status,
+   description,
+   create_date,
+   id_user,
+   update_date,
+   type,
+   int_val)
+ SELECT
+  0,
+   idx,
+   'BP_NUMBER',
+   1,
+   'Numero de factura bill pay',
+   status,
+   'Numero de un documento cuenta por pagar',
+   current_date() ,
+   id_user,
+  current_date(),
+   type,
+   (select count(*) from bill_pay)
+ FROM general_parameter
+  where code = 'POP_PRO';

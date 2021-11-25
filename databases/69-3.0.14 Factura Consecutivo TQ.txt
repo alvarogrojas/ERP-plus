@@ -1,0 +1,2 @@
+
+insert into factura_consecutivo values(10,'TQ',1);

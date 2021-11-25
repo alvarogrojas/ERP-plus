@@ -1,0 +1,70 @@
+
+-- Modalidad de carga/actualizacion de producto
+
+INSERT INTO general_parameter
+	( id, idx, code,
+      val, name, status,
+       description, create_date, id_user,
+       update_date, `type`, int_val) 
+VALUES ( 0, 1 , 'IMP_UPD_PROD',
+         '0', 'IMPORT  UPDATE  PRODUCTOS', 'Activo',
+         '0 no modifica datos del producto. 1 si modifica datos del producto durante la carga ', current_date(), 1,
+         current_date(), 'STRING', 1 );
+  
+
+-- modalidad de carga/Actualizacion de inventario 1-Reemplaza inventario
+-- Valor 0  suma el inventario y utiliza el algoritmo de usar costo mas alto. Valor 1 (default), vamos a actualizar el costo del inventario y la cantidad del inventario con lo que viene en el archivo que se esta importanto
+INSERT INTO general_parameter
+	( id, idx, code,
+      val, name, status,
+       description, create_date, id_user,
+       update_date, `type`, int_val) 
+VALUES ( 0, 2 , 'IMP_UPD_INV',
+         '0', 'IMPORT  UPDATE  INVENTARIO', 'Activo',
+         'Valor 0  suma el inventario y utiliza el algoritmo de usar costo mas alto. Valor 1 (default), vamos a actualizar el costo del inventario y la cantidad del inventario con lo que viene en el archivo que se esta importanto ', current_date(), 1,
+         current_date(), 'STRING', 1 );
+         
+         
+         
+   
+-- Creacion de la bodega para imports de articulos por csv
+/*INSERT INTO bodega
+	( id, name, adress, status, facturable, ultimo_cambio_id, fecha_ultimo_cambio, tienda_id, manejo_bodega, manejo_precio) 
+VALUES ( 1, 'Stock', 'Cartago', 'Activa', 'SI', null, null, 1, 'SIMPLE', 'Precio Mayor');*/
+
+INSERT INTO general_parameter
+	( id, idx, code,
+      val, name, status,
+       description, create_date, id_user,
+       update_date, `type`, int_val) 
+VALUES ( 0, 3 , 'IMP_BODEGA',
+         '0', 'IMPORT  BODEGA  DEFAULT', 'Activo',
+         'Id de la bodega por defecto para importaciones por archivo csv ', current_date(), 1,
+         current_date(), 'INTEGER', 1 );
+
+
+-- Creacion del centro de costo para imports de articulos por csv  
+
+/*INSERT INTO costs_center
+	( id, name, description, code, `type`, state, created_date, last_updated_date, client_id, last_updated_by_id, created_by_id, contact_id, total_budgeted, total_budgeted_materials, in_purchase_order
+) VALUES ( 1257, 'Stock', 'Stock','10-0410' , 'operaciones', 'ACTIVO' , current_date() , current_date(), 2 , 1, 1 , 5 , 0.0 , 0.0 , false);*/
+
+
+INSERT INTO general_parameter
+	( id, idx, code,
+      val, name, status,
+       description, create_date, id_user,
+       update_date, `type`, int_val) 
+VALUES ( 0, 4 , 'IMP_CENCOSTO',
+         '0', 'IMPORT CENTRO COSTO DEFAULT', 'Activo',
+         'Centro de costo por  defecto para importaciones por archivo csv ', current_date(), 1,
+         current_date(), 'INTEGER', 1257);
+         
+         
+         
+         
+         
+         
+         
+      
+         

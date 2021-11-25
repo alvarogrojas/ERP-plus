@@ -1,0 +1,11 @@
+ALTER TABLE purchase_order_client_detail ADD inventario_id int;
+
+ALTER TABLE purchase_order_client_detail ADD CONSTRAINT fk_purchase_order_client_detail_inventario FOREIGN KEY ( inventario_id )
+REFERENCES inventario( id ) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+ALTER TABLE purchase_order_client_detail ADD discount_porcentage double default 0;
+ALTER TABLE purchase_order_client_detail ADD discount_amount double default 0;
+
+ALTER TABLE purchase_order_client ADD discount_total double default 0;
+
+alter table purchase_order_client change status `status` enum('Ingresado','Ejecucion','Concluida','Anulado','Edicion') NOT NULL DEFAULT 'Edicion';

@@ -1,0 +1,4 @@
+insert into provider values(0,'Proveedor Interno','','','','','','',now(),now(),0,'Activo')
+	
+	
+	

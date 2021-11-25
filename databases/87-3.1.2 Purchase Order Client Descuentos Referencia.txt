@@ -1,0 +1,3 @@
+
+
+alter table purchase_order_client_detail add column descuentos_id int(10) default null;

@@ -1,0 +1,11 @@
+alter table general_parameter change val val varchar(256) not null;
+
+  INSERT INTO general_parameter
+  	( id, idx, code,
+        val, name, status,
+         description, create_date, id_user,
+         update_date, `type`, int_val)
+  VALUES ( 0, 1 , 'POS_TIQUETE_BOTTOM',
+           'Documento emitido conforme lo establecido en la resolución Factura Eléctrinica, No DGT-R-033-2019 del veintisiete de junio de dos mil diecinueve de la Dirección Genereal de Tributación','', 'Activo',
+           'El Guarco, Cartago' , current_date() , 1,
+           current_date(), 'STRING', 1);

@@ -1,0 +1,97 @@
+-- Scripts para actualizar datos de descuentos en la base de datos de clientes nuevos
+
+/*
+   TODO : Descomentar los inserts de descuentos segun se necesite, se suministra uno de ejempo
+*/
+
+
+
+-- Los decuentos globales se deben  crear sin una categoria
+
+/*
+
+insert into descuentos value
+(1,             -- id del descuento  
+null,           -- La referencia a la categoria va nula ya que es global
+"Basico 5%",    -- nombre del descuento
+'Global',       -- Tipo del descuento (Categoria, Global)
+5,              -- Porcentaje del descuento
+'Activo',       -- Estado del descuento
+now(), 
+1,              -- Id del usuario que crea el descuento
+0,              -- Flag de autorizacion requerida (0,1)
+now(), 
+1);             -- Id que modificó el registro por ultima vez
+
+*/
+
+
+
+/*
+   TODO : Descomentar los inserts de categoria segun se necesite, se suministra uno de ejempo
+*/
+
+/*
+insert into categoria values
+(1,              -- Id de la categoria
+"Testing 1",     -- Nombre de la categoria
+'Activo',
+now(), 
+1,               -- Usuario que crea la categoría
+now(),             
+1);              -- Usuario que modificó la categoria
+
+*/
+
+
+
+/*
+   TODO : Descomentar los inserts de producto_categoria segun se necesite, se suministra uno de ejempo
+          Aqui se establece la relacion entre el producto y la categoria  
+*/
+
+/*
+
+insert into producto_categoria values
+(1, -- Id  
+1,  -- Id de la categoria  con que se quiere relacionar el producto
+22, -- Id del producto que se quiere relacionar con la categoria
+'Activo',  
+now(),
+1,     -- Id del usuario que crea el registro 
+now(),
+1);    -- Id del usuario que modifica el registro
+
+
+*/
+
+
+
+/*
+   TODO : Descomentar los inserts de los descuentos por categoria segun se necesite, se suministra uno de ejemplo
+          Aqui se establece la relacion entre el producto y la categoria  
+          Estos descuentos aplican para los articulos que tengan relacion con la categoria del descuento en producto_categoria
+*/
+
+/*
+
+insert into descuentos value
+(5,          -- id
+ 1,          -- Referencia a la categoria del descuento
+"Especial Liquidacion", -- Nombre del descuento
+'Categoria', -- Tipo del descuento
+15,          -- Porcentaje del descuento
+'Activo',
+now(),
+1,           -- Id del usuario que ingresa el descuento
+0,           -- flag boolean que indica si el descuento requiere autorizacion
+now(),
+1);          -- Usuario que modificó el descuento 
+
+*/
+
+
+
+
+
+

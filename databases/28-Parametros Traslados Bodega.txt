@@ -1,0 +1,88 @@
+-- Parametro traslados  TRSL_CSC_MES
+INSERT INTO general_parameter (id, 
+  idx,
+  code,
+  val,
+  name,
+  status,
+  description,
+  create_date,
+  id_user,
+  update_date,
+  type,
+  int_val)
+SELECT
+ 0,
+  idx,
+  'TRSL_CSC_MES',
+  val,
+  'Mes consecutivo TRLS',
+  status,
+  'Mes  traslado bodegas',
+  current_date() ,
+  id_user,
+ current_date(),
+  type,
+  int_val
+FROM general_parameter
+ where code = 'POP_RPO_MES';
+ -- Parametro  TRSL_NUMBER
+ INSERT INTO general_parameter (id,
+   idx,
+   code,
+   val,
+   name,
+   status,
+   description,
+   create_date,
+   id_user,
+   update_date,
+   type,
+   int_val)
+ SELECT
+  0,
+   idx,
+   'TRSL_NUMBER',
+   val,
+   'Numero del traslado',
+   status,
+   'Numero de un documento de traslado entre bodegas',
+   current_date() ,
+   id_user,
+  current_date(),
+   type,
+   int_val
+ FROM general_parameter
+ where code = 'POP_PRO';
+ 
+ 
+ -- Parametro  TRSL_PREFIX
+ INSERT INTO general_parameter (id,
+   idx,
+   code,
+   val,
+   name,
+   status,
+   description,
+   create_date,
+   id_user,
+   update_date,
+   type,
+   int_val)
+ SELECT
+  0,
+   idx,
+   'TRSL_PREFIX',
+   'TRSL',
+   'Prefijo de un doc de traslado',
+   status,
+   'Prefijo del codigo del documento de un traslado entre bodegas',
+   current_date() ,
+   id_user,
+  current_date(),
+   'STRING',
+   0
+ FROM general_parameter
+ where code = 'POP_PRO';
+ 
+ 

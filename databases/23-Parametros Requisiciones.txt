@@ -1,0 +1,105 @@
+-- Parametros requisiciones
+
+-- Parametro  REQ_CONS_MES
+INSERT INTO general_parameter (id,
+  idx,
+  code,
+  val,
+  name,
+  status,
+  description,
+  create_date,
+  id_user,
+  update_date,
+  type,
+  int_val)
+SELECT
+ 0,
+  idx,
+  'REQ_CONS_MES',
+  val,
+  'Mes consecutivo REQ',
+  status,
+  'Mes consecutivo de una requisicion',
+  current_date() ,
+  id_user,
+ current_date(),
+  type,
+  int_val
+FROM general_parameter
+ where code = 'POP_RPO_MES';
+ 
+ 
+ 
+ 
+ -- Parametro  REQ_NUMBER
+ INSERT INTO general_parameter (id,
+   idx,
+   code,
+   val,
+   name,
+   status,
+   description,
+   create_date,
+   id_user,
+   update_date,
+   type,
+   int_val)
+ SELECT
+  0,
+   idx,
+   'REQ_NUMBER',
+   val,
+   'Numero de requisicion',
+   status,
+   'Numero de un documento de requisicion',
+   current_date() ,
+   id_user,
+  current_date(),
+   type,
+   int_val
+ FROM general_parameter
+  where code = 'POP_PRO';
+  
+  
+-- Parametro  REQ_PREFIX
+INSERT INTO general_parameter (id,
+  idx,
+  code,
+  val,
+  name,
+  status,
+  description,
+  create_date,
+  id_user,
+  update_date,
+  type,
+  int_val)
+SELECT
+ 0,
+  idx,
+  'REQ_PREFIX',
+  'REQ',
+  'Prefijo de la requisicion',
+  status,
+  'Prefijo del codigo de la requisicion',
+  current_date() ,
+  id_user,
+ current_date(),
+  'STRING',
+  0
+FROM general_parameter
+ where code = 'POP_PRO';
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

@@ -1,0 +1,18 @@
+
+
+INSERT INTO general_parameter
+values(0,
+	1,
+	'DEFAULT_INGRESO_BODEGA_CHECK',
+      '1',
+	'',
+	'Activo',
+	'Ingresos pasan a bodega cuando se cambia estado de Edicion de CxP',
+	current_date() ,
+	1,
+	current_date() ,
+	'INTEGER',
+	1);
+	
+	
+	

@@ -1,0 +1,3 @@
+
+ALTER TABLE traslado_detalle ADD total_traslado double default 0;
+ALTER TABLE traslado ADD total_traslado double default 0;

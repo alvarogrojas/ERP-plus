@@ -1,0 +1,12 @@
+CREATE TABLE `familia` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) DEFAULT NULL,
+  `estado` enum('Activo','Inactivo') DEFAULT 'Activo',
+  `sku` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
+
+
+
+
+

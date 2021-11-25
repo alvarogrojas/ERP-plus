@@ -1,0 +1,6 @@
+ALTER TABLE purchase_order_client ADD exchange_rate_id int UNSIGNED;
+ALTER TABLE purchase_order_client ADD CONSTRAINT fk_purchase_order_client_exchange_rate_id FOREIGN KEY ( exchange_rate_id ) 
+REFERENCES exchange_rate( id ) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
+

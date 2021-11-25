@@ -1,0 +1,6 @@
+-- encabezado
+ALTER TABLE devolucion MODIFY bodega_id int UNSIGNED NULL;
+
+     
+
+

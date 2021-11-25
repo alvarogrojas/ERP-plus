@@ -1,0 +1,7 @@
+
+ALTER TABLE bill_pay_nota_credito ADD consecutivo varchar(50) NOT NULL; 
+
+ALTER TABLE bill_pay_nota_credito ADD consecutivo_referencia varchar(50) NOT NULL; 
+
+ALTER TABLE bill_pay_nota_credito_detail DROP COLUMN iva_id;
+

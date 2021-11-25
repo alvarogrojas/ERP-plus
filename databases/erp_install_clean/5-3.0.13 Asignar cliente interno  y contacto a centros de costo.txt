@@ -1,0 +1,8 @@
+-- Actualizar centros de costo administrativos con el cliente interno y el contacto del cliente interno	
+update 	costs_center 
+set client_id = (select (max(c.client_id)) from client c),
+    contact_id = (select (max(cc.id) ) from contact_client cc)   
+where type = 'administrativo';
+
+
+	

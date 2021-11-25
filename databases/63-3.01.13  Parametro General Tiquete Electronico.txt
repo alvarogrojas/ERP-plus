@@ -1,0 +1,32 @@
+-- Parametro que indica si se debe generar un tiquete  electronico para hacienda
+-- Valor 0 indica que se debe genera un tiquete electonico para hacienda, Valor 1 indica que no se debe generar tiquete electronico para hacienda
+INSERT INTO general_parameter
+	( id, idx, code,
+      val, name, status,
+       description, create_date, id_user,
+       update_date, `type`, int_val) 
+VALUES ( 0, 1 , 'REGIMEN_SIMPLIFICADO_TIQUETE',
+         '0', 'Flag para regimen simplificado', 'Activo',
+         'Valor 0 indica que se debe genera un tiquete electonico para hacienda, Valor 1 indica que no se debe generar tiquete electronico para hacienda.' , current_date() , 1,
+         current_date(), 'STRING', 1);
+
+
+ INSERT INTO general_parameter
+ 	( id, idx, code,
+       val, name, status,
+        description, create_date, id_user,
+        update_date, `type`, int_val)
+ VALUES ( 0, 1 , 'POS_SHORT_ADDRESS',
+          '0', 'El Guarco, Cartago', 'Activo',
+          'El Guarco, Cartago' , current_date() , 1,
+          current_date(), 'STRING', 1);
+
+
+
+         
+         
+         
+         
+         
+         
+         

@@ -1,0 +1,9 @@
+/* TODO : Descomentar y configurar valores */
+
+/*
+insert into terminal values(1,'POS','Heredia','Cerrada',now(),now(), 1);
+
+insert into terminal_usuario values(1,1,1,'Activo');
+*/
+
+

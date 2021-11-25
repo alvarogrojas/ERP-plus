@@ -1,0 +1,11 @@
+
+ALTER TABLE transaccion_pendiente ADD terminal_id int UNSIGNED; 
+
+
+ALTER TABLE transaccion_pendiente ADD CONSTRAINT fk_transaccion_pendiente_terminal FOREIGN KEY ( terminal_id )
+REFERENCES terminal( id ) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
+
+
+ 

@@ -1,0 +1,39 @@
+
+
+CREATE TABLE `init_inventario_detalle` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `tipo` varchar(15) NOT NULL,
+  `sku` varchar(64) NOT NULL,
+  `codigo` varchar(32) DEFAULT NULL,
+  `nombre` varchar(128) NOT NULL,
+  `unidad_medida` varchar(20) DEFAULT NULL,
+  `precio_list` double DEFAULT NULL,
+  `codigo_cabys` varchar(13) DEFAULT NULL,
+  `modelo_catalogo` varchar(32) DEFAULT NULL,
+  `fabricante` varchar(50) DEFAULT NULL,
+  `init_inventario_id` int(10) unsigned NOT NULL,
+  `categorias` varchar(250) DEFAULT NULL,
+  `margen_utilidad` double DEFAULT NULL,
+  `precio_costo` double DEFAULT NULL,
+  `cantidad_inventario` double DEFAULT NULL,
+  `producto_id` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_init_inventario_detalle_init_inventario` (`init_inventario_id`),
+  CONSTRAINT `fk_init_inventario_detalle_init_inventario` FOREIGN KEY (`init_inventario_id`) REFERENCES `init_inventario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

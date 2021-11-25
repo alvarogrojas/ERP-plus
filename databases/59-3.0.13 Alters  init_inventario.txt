@@ -1,0 +1,5 @@
+
+ALTER TABLE init_inventario ADD flag_modo_import_inventario double NOT NULL;
+
+
+

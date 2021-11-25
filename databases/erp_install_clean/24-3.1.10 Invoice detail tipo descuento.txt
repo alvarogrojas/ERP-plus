@@ -1,0 +1,1 @@
+alter table invoice_detail add column `tipo_descuento` enum('Categoria','Cliente','Global') NOT NULL DEFAULT 'Global';

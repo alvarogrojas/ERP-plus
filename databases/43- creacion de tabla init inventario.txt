@@ -1,0 +1,29 @@
+
+CREATE TABLE `init_inventario` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `fecha_init` date NOT NULL,
+  `creada_por` int(10) unsigned NOT NULL,
+  `fecha_creacion` date NOT NULL,
+  `actualizada_por` int(10) unsigned DEFAULT NULL,
+  `uri_file_name` varchar(250) NOT NULL,
+  `estado` enum('Edicion','Importado') NOT NULL DEFAULT 'Edicion',
+  `observacion` varchar(200) DEFAULT '',
+  PRIMARY KEY (`id`),
+  KEY `fk_init_inventario_creada_por_user` (`creada_por`),
+  KEY `fk_init_inventario_actualizada_por_user` (`actualizada_por`),
+  CONSTRAINT `fk_init_inventario_actualizada_por_user` FOREIGN KEY (`actualizada_por`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_init_inventario_creada_por_user` FOREIGN KEY (`creada_por`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+
+
+
+
+
+
+
+

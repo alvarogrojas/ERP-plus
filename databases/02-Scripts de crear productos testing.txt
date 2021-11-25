@@ -1,0 +1,137 @@
+INSERT INTO tienda
+    ( id, nombre, direccion, email, telefono) VALUES ( 0, 'Uruca', '100 al este talleres font', 'test@test.com', "71103729" );
+    
+-- Actualizar la tienda de las bodegas 
+update bodega set tienda_id = (select id from tienda where nombre = 'Uruca'); 
+alter table bodega modify tienda_id int(11) not null;  
+
+-- agregar la bodega de desecho
+INSERT INTO bodega
+	( id, name, adress, status, facturable,
+     ultimo_cambio_id,  fecha_ultimo_cambio, tienda_id,
+     manejo_bodega) 
+VALUES ( 0, 'DESECHO', 'Cartago', 'Activa', 'NO', 
+         null, null, (select id from tienda where nombre = 'Uruca'), 
+         'SIMPLE' );
+         
+-- agregar la bodega de desecho a general parameter
+INSERT INTO general_parameter
+	( id, idx, code, val,
+     name, status, description,
+     create_date, id_user, update_date,
+     `type`, int_val) 
+  VALUES ( 0, 1, 'BOD_DESECHO',
+           'DESECHO', 'BOD_DESECHO', 'Activo', 
+           'Bodega para articulos desecho', current_date(), 1,
+           current_date(), 'STRING', 0 );
+
+
+
+INSERT INTO unidad_medida
+    ( id, nombre, simbolo) VALUES ( 0, 'Metro', 'm' );
+INSERT INTO unidad_medida
+    ( id, nombre, simbolo) VALUES ( 0, 'Kilo', 'k' );
+INSERT INTO unidad_medida
+    ( id, nombre, simbolo) VALUES ( 0,'Unidad', 'u' );
+
+
+
+Insert into fabricante (id, nombre, estado) values(0,'ABB' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'ALLEN BRADLEY' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'AMANCO' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'AMFLO' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'ASHCROFT' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'BELDEN ' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'BM GROUP' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'BOSCH REXROTH' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'BRADY' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'CARLO GAVAZZI ' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'CEMBRE' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'CHINT' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'CLIPPARD' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'COILHOSE PNEUMATICS' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'CONINCA' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'DELTA ELECTRONICS' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'DF ELECTRIC' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'DURMAN ' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'EAGLE' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'EATON' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'ELECTRIC ELECTRON ' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'ELECTRIX' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'ERICO' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'FAMATEL' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'FERRAZ SHAWMUT' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'FESTO' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'FLUKE' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'GENERAL ELECTRIC' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'GEORG FISCHER' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'GUNNERN' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'HEYCO' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'HOFFMAN' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'HY LOCK' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'IDEAL TRION ' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'KRAUS & NAIMER' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'MALLORY CAPACITORS' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'MARATHON' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'MAZ' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'MIYAKO USA' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'NEXXT' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'NEWLINK' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'NIBCO' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'LA-CO' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'LEGRAND' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'LEGRIS ' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'PANDUIT' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'PROSOFT-TECHNOLOGY' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'OMRON' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'RadioShack' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'RAMCO' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'RAWELT' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'RELECO' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'RITTAL' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'RYMCO' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'POE' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'SIEMENS' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'SMC' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'SPEARS' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'STEEL ELECTRIC' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'SWAGELOK' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'TRANSAIR ' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'TELEMECANIQUE' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'TESEO' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'TOPAZ' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'TRUPPER' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'SCHNEIDER ELECTRIC' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'VALTEC' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'VERIS INDUSTRIES' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'VNE' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'WEIDMULLER' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'WINTERS INSTRUMENTS' ,'Activo');
+Insert into fabricante (id, nombre, estado) values(0,'3M' ,'Activo');
+
+    
+    
+-- productos     
+
+      
+        
+-- categorias  por producto 
+
+-- PLC
+
+
+-- descuentos cliente por categoria de producto
+       
+
+-- Descuentos en categorias por cliente
+
+
+-- Descuentos por producto
+
+
+-- Datos de pruebas para descuentos por categoria
+
+
+
+        
+        

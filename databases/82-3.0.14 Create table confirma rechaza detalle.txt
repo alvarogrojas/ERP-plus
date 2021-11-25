@@ -1,0 +1,23 @@
+
+CREATE TABLE `confirma_rechaza_detalle` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `crd_id` int(11) NOT NULL,
+  `index_line` int(11) DEFAULT NULL,
+  `detalle` varchar(256) NOT NULL,
+  `cantidad` double NOT NULL DEFAULT '0',
+  `precio_unitario` double NOT NULL DEFAULT '0',
+  `tax` double NOT NULL DEFAULT '0',
+  `monto_total` double NOT NULL DEFAULT '0',
+  `sub_total` double NOT NULL DEFAULT '0',
+  `porcentaje_impuesto` double NOT NULL DEFAULT '0',
+  `impuesto` double NOT NULL DEFAULT '0',
+  `monto_total_linea` double NOT NULL DEFAULT '0',
+  `create_at` date DEFAULT NULL,
+  `update_at` date DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_confirma_rechaza_detalle_confirma_rechaza_documento` (`crd_id`),
+  CONSTRAINT `fk_confirma_rechaza_detalle_confirma_rechaza_documento` FOREIGN KEY (`crd_id`) REFERENCES `confirma_rechaza_documento` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
+
+
+

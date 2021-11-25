@@ -1,0 +1,18 @@
+ALTER TABLE producto ADD familia_id int UNSIGNED;
+
+ALTER TABLE producto ADD CONSTRAINT fk_producto_familia 
+FOREIGN KEY ( familia_id ) REFERENCES familia( id ) 
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+ALTER TABLE producto ADD tipo enum('Simple', 'Variable', 'Variation') DEFAULT 'Simple'; 
+
+
+
+
+
+
+
+
+
+
+

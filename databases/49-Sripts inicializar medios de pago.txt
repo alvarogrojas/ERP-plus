@@ -1,0 +1,12 @@
+INSERT INTO medio_pago
+	( id, nombre, estado) VALUES ( 1, 'Efectivo', 'Activo' );
+INSERT INTO medio_pago
+	( id, nombre, estado) VALUES ( 2, 'Tarjeta', 'Activo' );
+INSERT INTO medio_pago
+	( id, nombre, estado) VALUES ( 3, 'SINPE', 'Activo' );
+INSERT INTO medio_pago
+	( id, nombre, estado) VALUES ( 4, 'Transferencia Bancaria', 'Activo' );
+INSERT INTO medio_pago
+	( id, nombre, estado) VALUES ( 5, 'Otro', 'Activo' );
+	
+	

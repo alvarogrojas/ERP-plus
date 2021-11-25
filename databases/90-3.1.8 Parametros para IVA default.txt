@@ -1,0 +1,17 @@
+## CAMBIAR POR IVA DEFAULT
+INSERT INTO general_parameter
+values(0,
+	1,
+	'IMP_VENTA_DEFAULT',
+	'0',
+	'porcentaje iva default',
+	'Activo',
+	'porcentaje iva default seleccionado',
+	current_date() ,
+	1,
+	current_date() ,
+	'INTEGER',
+	0);
+	
+	
+	

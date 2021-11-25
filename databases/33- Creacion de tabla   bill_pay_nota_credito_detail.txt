@@ -1,0 +1,44 @@
+
+CREATE TABLE `bill_pay_nota_credito_detail` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `parent_id` int(10) unsigned NOT NULL,
+  `index_line` int(11) DEFAULT NULL,
+  `description` varchar(256) DEFAULT NULL,
+  `type` enum('Servicio','Producto') NOT NULL DEFAULT 'Servicio',
+  `quantity` double NOT NULL DEFAULT '0',
+  `price` double NOT NULL DEFAULT '0',
+  `tax` double NOT NULL DEFAULT '0',
+  `sub_total` double NOT NULL DEFAULT '0',
+  `total` double NOT NULL DEFAULT '0',
+  `user_id` int(10) unsigned DEFAULT NULL,
+  `create_at` date DEFAULT NULL,
+  `update_at` date DEFAULT NULL,
+  `iva_id` int(10) unsigned DEFAULT NULL,
+  `exonerated` double DEFAULT '0',
+  `codigo_cabys` varchar(13) DEFAULT NULL,
+  `codigo_cabys_bodega` varchar(13) DEFAULT NULL,
+  `parent_cabys_id` int(11) DEFAULT NULL,
+  `salida_bodega` tinyint(4) NOT NULL DEFAULT '0',
+  `cost_center_id` int(10) unsigned DEFAULT NULL,
+  `inventario_id` int(11) DEFAULT NULL,
+  `bill_pay_detail_id` int(10) unsigned NOT NULL,
+  `discount_porcentage` double DEFAULT '0',
+  `discount_amount` double DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `fk_bill_pay_nota_credito_detail` (`parent_id`),
+  KEY `fk_bill_pay_nota_credito_detail_costs_center` (`cost_center_id`),
+  KEY `fk_bill_pay_nota_credito_detail_user` (`user_id`),
+  KEY `fk_bill_pay_nota_credito_detail_inventario` (`inventario_id`),
+  KEY `fk_bill_pay_nota_credito_detail_bill_pay_detail` (`bill_pay_detail_id`),
+  CONSTRAINT `fk_bill_pay_nota_credito_detail` FOREIGN KEY (`parent_id`) REFERENCES `bill_pay_nota_credito` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_bill_pay_nota_credito_detail_bill_pay_detail` FOREIGN KEY (`bill_pay_detail_id`) REFERENCES `bill_pay_detail` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_bill_pay_nota_credito_detail_costs_center` FOREIGN KEY (`cost_center_id`) REFERENCES `costs_center` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_bill_pay_nota_credito_detail_inventario` FOREIGN KEY (`inventario_id`) REFERENCES `inventario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_bill_pay_nota_credito_detail_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+

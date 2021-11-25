@@ -1,0 +1,5 @@
+alter table general_parameter change code code varchar(32) not null;
+
+
+
+

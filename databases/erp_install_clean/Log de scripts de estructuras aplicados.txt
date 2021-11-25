@@ -1,0 +1,8 @@
+Fecha         Responsable          Script 
+   
+23/09/2021    Felix                77-3.0.14 Alter table  refundable  tipo cambio.txt
+24/09/2021    Felix                78-3.0.14 Alter table terminal bodega requerida.txt
+30/09/2021    Felix                79-3.0.14 Ater table estado exchange rate.txt
+7/10/2021     Felix                83-3.0.14 Alter table session pos.txt
+7/10/2021     Felix                Nota: el script 84-3.0.14 Insert Parametros POS.txt, no se debe aplicar porque ya va incluido en los scripts de configuracion de esta bd 
+11/10/2021    Felix                85-3.0.14 Create table descuento

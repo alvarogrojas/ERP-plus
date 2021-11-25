@@ -1,0 +1,50 @@
+CREATE TABLE `descuentos` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `referencia_id` int(11) default NULL,
+  `nombre_descuento` varchar(64) NOT NULL,
+  `tipo_descuento` enum('Categoria','Cliente','Global') NOT NULL DEFAULT 'Global',
+  `porcentaje_descuento` double NOT NULL DEFAULT '0',
+  `estado` enum('Activo','Inactivo') NOT NULL DEFAULT 'Activo',
+  `fecha_ingreso` date NOT NULL,
+  `ingresado_por` int(10) unsigned NOT NULL,
+  `autorizacion_requerida` tinyint(1) NOT NULL default 0,
+  `fecha_ultimo_cambio` date NOT NULL,
+  `ultimo_cambio_por` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_descuentos_ingresado_por` (`ingresado_por`),
+  KEY `fk_descuentos_ultimo_cambio_por` (`ultimo_cambio_por`),
+  KEY `idx_descuentos_estado` (`estado`) USING HASH,
+  CONSTRAINT `fk_descuentos_ingresado_por` FOREIGN KEY (`ingresado_por`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_descuentos_ultimo_cambio_por` FOREIGN KEY (`ultimo_cambio_por`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+insert into descuentos value(1,null, "Sin Descuento",'Global',0,'Activo',now(),1,0,now(),1);
+insert into descuentos value(2,null, "Basico 5%",'Global',5,'Activo',now(),1,0,now(),1);
+insert into descuentos value(3,null, "Descuento 7%",'Global',7,'Activo',now(),1,0,now(),1);
+insert into descuentos value(4,null, "Oferta 10%",'Global',10,'Activo',now(),1,1,now(),1);
+
+alter table invoice_detail add column descuentos_id int(10) default null;
+alter table invoice add column tipo_descuento enum('Categoria','Cliente','Global') NOT NULL DEFAULT 'Global';
+
+
+///////////// PRUEBAS
+insert into categoria values(1,"Testing 1", 'Activo', now(), 1, now(),1);
+
+insert into producto_categoria values(1,1,19, 'Activo', now(), 1, now(),1);
+insert into producto_categoria values(2,1,20, 'Activo', now(), 1, now(),1);
+insert into producto_categoria values(3,1,21, 'Activo', now(), 1, now(),1);
+
+insert into categoria values(2,"Testing 2", 'Activo', now(), 1, now(),1);
+insert into producto_categoria values(5,2,22, 'Activo', now(), 1, now(),1);
+insert into producto_categoria values(6,2,23, 'Activo', now(), 1, now(),1);
+insert into producto_categoria values(4,2,21, 'Activo', now(), 1, now(),1);
+
+insert into descuentos value(5,1, "Especial Liquidacion",'Categoria',15,'Activo',now(),1,0,now(),1);
+insert into descuentos value(6,2, "Black Friday",'Categoria',30,'Activo',now(),1,0,now(),1);
+
+
+
+
+
+

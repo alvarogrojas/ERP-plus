@@ -1,0 +1,3 @@
+
+CREATE INDEX idx_bill_pay_bill_number ON bill_pay ( bill_number ) USING HASH;
+

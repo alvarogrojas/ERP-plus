@@ -1,0 +1,9 @@
+ALTER TABLE cotizacion ADD exchange_rate_id int UNSIGNED;
+ALTER TABLE cotizacion ADD CONSTRAINT fk_cotizacion_exchange_rate FOREIGN KEY ( exchange_rate_id )
+REFERENCES exchange_rate( id ) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
+
+
+
+

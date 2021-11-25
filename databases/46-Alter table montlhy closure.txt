@@ -1,0 +1,24 @@
+-- indices monthly_clossure
+
+CREATE INDEX idx_monthly_closure_status ON monthly_closure ( status ) USING HASH;
+CREATE INDEX idx_monthly_closure_end ON monthly_closure ( end ) USING BTREE;
+CREATE INDEX idx_monthly_closure_start ON monthly_closure ( start ) USING BTREE;
+
+
+
+-- indices monthly_closure_cxc
+-- Ya tiene indices sobre id_parent y id_bill_collect
+
+
+
+-- indices monthly_closure_cxp
+-- ya tiene indices
+
+
+-- indices monthly_closure_pay_roll
+-- ya tiene indices
+
+
+
+
+

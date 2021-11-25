@@ -1,0 +1,57 @@
+
+
+-- Creacion de parametro 'POS_TIQUETE_BOTTOM'
+/*INSERT INTO general_parameter
+	( id,
+      idx,
+      code, 
+      val, 
+      name,
+     `status`,
+      description,
+      create_date,
+      id_user,
+  update_date, 
+       `type`,
+      int_val)
+VALUES ( 0,
+         1,
+        'POS_TIQUETE_BOTTOM',
+        'Documento emitido conforme lo establecido en la resoluci�n Factura El�ctrinica, No DGT-R-033-2019 del veintisiete de junio de dos mil diecinueve de la Direcci�n Genereal de Tributaci�n', -- Asignar la resolucion vigent e al momento de implantar el sistema',   
+        'Footer POS', -- nombre del parametro
+        'Activo',
+        'Resolucion No DGT-R-033-2019',
+        current_date(), 
+        1,
+        current_date(),
+        'STRING',
+        null );*/
+
+
+
+-- creacion de parametro POS_SHORT_ADDRESS                                    
+/*INSERT INTO general_parameter
+	( id,
+      idx,
+      code, 
+      val, 
+      name,
+     `status`,
+      description,
+      create_date,
+      id_user,
+  update_date, 
+       `type`,
+      int_val)
+VALUES ( 0,
+         1,
+        'POS_SHORT_ADDRESS',
+        'El Guarco Cartago', -- Asignar la direccion corta para el pos en este campo    
+        'Direccion Corta',  -- Nombre del parametro  
+        'Activo',
+        'El Guarco Cartago', -- Asignar una descripcion para la direccion corta del pos en este campo
+        current_date(), 
+        1,
+        current_date(),
+        'STRING',
+        null );*/

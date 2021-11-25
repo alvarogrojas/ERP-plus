@@ -1,0 +1,18 @@
+
+-- Alters encabezado
+ALTER TABLE requisicion_bodega MODIFY estado enum('Edicion','Ingresado','Rechazado', 'Pendiente', 'Aprobado') NOT NULL DEFAULT 'Edicion';
+
+-- Alters detalle
+
+
+
+
+
+
+
+
+
+
+
+
+

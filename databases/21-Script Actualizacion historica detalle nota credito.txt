@@ -1,0 +1,24 @@
+ALTER TABLE invoice_nota_credito_detail MODIFY invoice_detail_id int UNSIGNED NULL;
+ 
+update invoice_nota_credito_detail ncd set ncd.cost_center_id = (select ivd.cost_center_id 
+                                                                 from invoice_detail ivd where ivd.parent_id = (select ivc.invoice_id from invoice_nota_credito ivc
+                                                                                                                where ivc.id = ncd.parent_id ) 
+                                                                 and ivd.index_line  = ncd.index_line
+                                                                ),
+ncd.invoice_detail_id = (select ivd.id
+                                                                 from invoice_detail ivd where ivd.parent_id = (select ivc.invoice_id from invoice_nota_credito ivc
+                                                                                                                where ivc.id = ncd.parent_id ) 
+                                                                 and ivd.index_line  = ncd.index_line
+                                                                );
+
+ALTER TABLE invoice_nota_credito_detail MODIFY invoice_detail_id int UNSIGNED NOT NULL; 
+
+
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                

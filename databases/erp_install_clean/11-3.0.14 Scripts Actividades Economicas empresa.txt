@@ -1,0 +1,19 @@
+-- Scripts para configurar las actividades economicas de la empresa (pueden ser varias)
+
+/*TODO : Descomentar la actividad economica e insertar en el sistema las que el cliente indique
+*/
+
+-- Se suministra un ejemplo de insert con datos (inserte las actividades que le suministre el cliente)
+
+/*
+INSERT INTO tipo_actividad_economica
+(id,
+ codigo,
+ descripcion) 
+VALUES
+( 0,
+'742102', -- Suministrar un id de 6 digitos para la actividad economica
+'ACTIVIDADES DE ARQUITECTURA E INGENIERIA'); -- Suministrar una descripcion de maximo 256 caracteres
+*/
+
+

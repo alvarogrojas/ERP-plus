@@ -1,0 +1,90 @@
+-- Parametro  BPNC_CON_MES
+INSERT INTO general_parameter (id,
+  idx,
+  code,
+  val,
+  name,
+  status,
+  description,
+  create_date,
+  id_user,
+  update_date,
+  type,
+  int_val)
+SELECT
+ 0,
+  idx,
+  'BPNC_CON_MES',
+  val,
+  'Mes consecutivo BPNC',
+  status,
+  'Mes consecutivo Nota de Credito Bill Pay',
+  current_date() ,
+  id_user,
+ current_date(),
+  type,
+  int_val
+FROM general_parameter
+ where code = 'POP_RPO_MES';
+ 
+ 
+ -- Parametro  BPNC_NUMBER
+ INSERT INTO general_parameter (id,
+   idx,
+   code,
+   val,
+   name,
+   status,
+   description,
+   create_date,
+   id_user,
+   update_date,
+   type,
+   int_val)
+ SELECT
+  0,
+   idx,
+   'BPNC_NUMBER',
+   val,
+   'Numero de nota credito bill pay',
+   status,
+   'Numero de un documento de Nota de credito cuenta por pagar',
+   current_date() ,
+   id_user,
+  current_date(),
+   type,
+   (select count(*) from bill_pay_nota_credito)
+ FROM general_parameter
+  where code = 'POP_PRO';
+
+ 
+ -- Parametro  BPNC_PREFIX
+ INSERT INTO general_parameter (id,
+   idx,
+   code,
+   val,
+   name,
+   status,
+   description,
+   create_date,
+   id_user,
+   update_date,
+   type,
+   int_val)
+ SELECT
+  0,
+   idx,
+   'BPNC_PREFIX',
+   'BPNC',
+   'Prefijo de la nc de un bill pay',
+   status,
+   'Prefijo del codigo del documento de una nota de credito por bill pay',
+   current_date() ,
+   id_user,
+  current_date(),
+   'STRING',
+   0
+ FROM general_parameter
+ where code = 'POP_PRO';
+ 
+ 

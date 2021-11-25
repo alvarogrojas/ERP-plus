@@ -1,0 +1,28 @@
+INSERT INTO traslado_justificacion
+	( id, nombre, estado, es_desecho) 
+VALUES ( 0, 'Traslado de inventario entre bodegas', 'Activo', 0 );
+
+INSERT INTO traslado_justificacion
+	( id, nombre, estado, es_desecho) 
+VALUES ( 0, 'Traslado a bodega de desecho', 'Activo', 1 );
+
+INSERT INTO traslado_justificacion
+	( id, nombre, estado, es_desecho) 
+VALUES ( 0, 'Desecho por daño electrico', 'Activo', 1 );
+
+INSERT INTO traslado_justificacion
+	( id, nombre, estado, es_desecho) 
+VALUES ( 0, 'Desecho por exposicion a agua', 'Activo', 1 );
+
+
+INSERT INTO traslado_justificacion
+	( id, nombre, estado, es_desecho) 
+VALUES ( 0, 'Desecho por incendio', 'Activo', 1 );
+
+INSERT INTO traslado_justificacion
+	( id, nombre, estado, es_desecho) 
+VALUES ( 0, 'Desecho por mala manipulación', 'Activo', 1 );
+
+
+
+

@@ -1,0 +1,80 @@
+
+-- cliente generico para ventas, descomentar para crearlo
+ /*
+INSERT INTO client
+	( client_id, name, address,
+       description, phone, score,
+      `createdDate`, enterprice_id, credit_day,
+      status, update_date, email,
+     exonerated, id_type, nacional, 
+     provincia_cr_id, canton_cr_id, distrito_cr_id)
+ VALUES ((select (max(c.client_id) + 1) from client c), 'CLIENTE DEFAULT', 'Cartago, Costa Rica',
+         'Cliente Generico para ventas', 'Cliente Ventas' , '0', 
+          current_date(), null, 0,
+          'Activo',  current_date(), (select val from general_parameter where code = 'ingp_inf'  and name = 'EMAIL') ,
+          'NO', '02', true,
+          null, null, null );
+ */          
+
+
+/* TODO : Descomentar y configurar valores, descomentar para crearlo */
+/* 
+INSERT INTO contact_client
+	( id, name, address, email, department, phone1, phone2, phone3, client_id, user_id, `status`) 
+VALUES ( 0,'Contacto cliente ventas', '', '', '', '', '', '', (select (max(c.client_id)) from client c), 1, 'Activo' );
+*/          
+
+/* TODO: Descomentar para crear cost center de ventas
+insert into costs_center
+( id, name, description,
+ code,`type`, state,
+ created_date,  last_updated_date, client_id,
+ last_updated_by_id, created_by_id, contact_id,
+ total_budgeted, total_budgeted_materials, in_purchase_order
+) 
+values(
+	(select max(c.id)+1 from costs_center c), 'Ventas', 'Para asignar las ventas del sistema',
+	'VENTAS',  'proyecto', 'ACTIVO',
+	current_date() , current_date(), (select max(cl.client_id) from client cl),
+	1, 1, /*(select (max(cc.id) ) from contact_client cc)*/,
+	0,0,false);
+*/	
+
+
+/* TODO : Descomentar y configurar valores */
+INSERT INTO general_parameter
+values(0,
+	1,
+	'DEFAULT_COSTS_CENTER_SELLING',
+      'Centro costos default para hacer ventas',
+	'DEFAULT_COSTS_CENTER_SELLING',
+	'Activo',
+	'ID del centro de costos para ventas',
+	current_date() ,
+	1,
+	current_date() ,
+	'INTEGER',
+	(select max(cc.id) from costs_center cc));
+	
+
+/* TODO : Descomentar y configurar valores */
+INSERT INTO general_parameter
+values(0,
+	1,
+	'DEFAULT_CUSTOMER_SELLING',
+      'Cliente default para ventas',
+	'DEFAULT_CUSTOMER_SELLING',
+	'Activo',
+	'ID del cliente default para ventas',
+	current_date() ,
+	1,
+	current_date() ,
+	'INTEGER',
+	(select max(cl.client_id) from client cl));
+	
+	
+	
+	
+	
+	
+	

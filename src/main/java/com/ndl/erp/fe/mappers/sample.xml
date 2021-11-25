@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MensajeHacienda>
+    <Clave>50605091800310137276700100001010000000300180460277</Clave>
+    <NombreEmisor>INGPRO S.A.</NombreEmisor>
+    <TipoIdentificacionEmisor>02</TipoIdentificacionEmisor>
+    <NumeroCedulaEmisor>3101372767</NumeroCedulaEmisor>
+    <NombreReceptor>Paradise Ingredients, S.A</NombreReceptor>
+    <TipoIdentificacionReceptor>02</TipoIdentificacionReceptor>
+    <NumeroCedulaReceptor>3101222859</NumeroCedulaReceptor>
+    <Mensaje>1</Mensaje>
+</MensajeHacienda>

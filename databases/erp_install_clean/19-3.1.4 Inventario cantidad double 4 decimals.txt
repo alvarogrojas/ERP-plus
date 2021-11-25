@@ -1,0 +1,10 @@
+alter table inventario change cantidad_salida cantidad_salida double(14,4) default 0;
+
+alter table inventario change cantidad_saldo cantidad_saldo double(14,4) default 0;
+alter table inventario change cantidad_entrada cantidad_entrada double(14,4) default 0;
+
+alter table inventario_bodega change cantidad_disponible cantidad_disponible double(14,4) default 0;
+alter table inventario_bodega change cantidad_congelada cantidad_congelada double(14,4) default 0;
+alter table inventario_bodega change cantidad_total_anual cantidad_total_anual double(14,4) default 0;
+alter table inventario_bodega change cantidad_cotizada cantidad_cotizada double(14,4) default 0;
+alter table inventario_bodega change cantidad_apartado cantidad_apartado double(14,4) default 0;

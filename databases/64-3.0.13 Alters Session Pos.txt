@@ -1,0 +1,2 @@
+
+alter table session_pos add column `monto_neto` double DEFAULT '0';

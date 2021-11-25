@@ -1,0 +1,12 @@
+-- Alters de entradas de inventario
+ALTER TABLE entradas_inventario ADD costs_center_id int;
+
+
+-- Alters de salidas de inventario  
+
+ALTER TABLE salidas_inventario ADD costs_center_id int; 
+
+
+
+
+

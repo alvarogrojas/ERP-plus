@@ -1,0 +1,94 @@
+-- Parametro  DEV_CONS_MES
+INSERT INTO general_parameter (id,
+  idx,
+  code,
+  val,
+  name,
+  status,
+  description,
+  create_date,
+  id_user,
+  update_date,
+  type,
+  int_val)
+SELECT
+ 0,
+  idx,
+  'DEV_CONS_MES',
+  val,
+  'Mes consecutivo DEV',
+  status,
+  'Mes consecutivo documento Devolucion',
+  current_date() ,
+  id_user,
+ current_date(),
+  type,
+  int_val
+FROM general_parameter
+ where code = 'POP_RPO_MES';
+ 
+ -- Parametro  DEV_NUMBER
+ INSERT INTO general_parameter (id,
+   idx,
+   code,
+   val,
+   name,
+   status,
+   description,
+   create_date,
+   id_user,
+   update_date,
+   type,
+   int_val)
+ SELECT
+  0,
+   idx,
+   'DEV_NUMBER',
+   val,
+   'Numero de de devolucion',
+   status,
+   'Numero de un documento de devolucion',
+   current_date() ,
+   id_user,
+  current_date(),
+   type,
+   int_val
+ FROM general_parameter
+ where code = 'POP_PRO';
+ 
+ 
+ -- Parametro  DEV_PREFIX
+ INSERT INTO general_parameter (id,
+   idx,
+   code,
+   val,
+   name,
+   status,
+   description,
+   create_date,
+   id_user,
+   update_date,
+   type,
+   int_val)
+ SELECT
+  0,
+   idx,
+   'DEV_PREFIX',
+   'DEV',
+   'Prefijo de la devolucion',
+   status,
+   'Prefijo del codigo del documento de una devolucion',
+   current_date() ,
+   id_user,
+  current_date(),
+   'STRING',
+   0
+ FROM general_parameter
+ where code = 'POP_PRO';
+ 
+ 
+ 
+ 
+ 
+
+

@@ -1,0 +1,8 @@
+-- inicializar la terminal pos
+update terminal set bodega_id = (select id from bodega where name = 'Stock') 
+where nombre = 'POS';
+
+ALTER TABLE terminal MODIFY bodega_id int(10) unsigned not null;
+
+
+

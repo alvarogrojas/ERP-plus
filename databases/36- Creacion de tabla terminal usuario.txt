@@ -1,0 +1,13 @@
+
+CREATE TABLE `terminal_usuario` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `usuario_id` int(10) unsigned DEFAULT NULL,
+  `terminal_id` int(10) unsigned DEFAULT NULL,
+  `estado` enum('Activo','Inactivo') NOT NULL DEFAULT 'Activo',
+  PRIMARY KEY (`id`),
+  KEY `fk_terminal_usuario_user` (`usuario_id`),
+  KEY `fk_terminal_usuario_terminal` (`terminal_id`),
+  CONSTRAINT `fk_terminal_usuario_terminal` FOREIGN KEY (`terminal_id`) REFERENCES `terminal` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_terminal_usuario_user` FOREIGN KEY (`usuario_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
+

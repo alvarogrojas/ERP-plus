@@ -1,0 +1,6 @@
+
+ALTER TABLE init_inventario_detalle ADD cantidad_incremento_neto double DEFAULT 0;
+
+
+
+

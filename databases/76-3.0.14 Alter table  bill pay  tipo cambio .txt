@@ -1,0 +1,7 @@
+
+ALTER TABLE bill_pay ADD exchange_rate_id int UNSIGNED;
+
+
+ALTER TABLE bill_pay ADD CONSTRAINT fk_bill_pay_exchange_rate FOREIGN KEY ( exchange_rate_id ) 
+REFERENCES exchange_rate( id ) ON DELETE NO ACTION ON UPDATE NO ACTION;
+

@@ -1,0 +1,10 @@
+
+ALTER TABLE confirma_rechaza_documento ADD descuento_total double DEFAULT 0;
+
+ALTER TABLE confirma_rechaza_documento ADD tipo_actividad_economica varchar(256);
+
+ALTER TABLE confirma_rechaza_documento ADD tipo_transaccion enum('FE', 'FEX', 'NC', 'TQ');
+
+
+
+

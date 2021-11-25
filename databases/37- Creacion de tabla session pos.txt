@@ -1,0 +1,32 @@
+   
+
+CREATE TABLE `session_pos` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `terminal_usuario_id` int(10) unsigned DEFAULT NULL,
+  `estado` enum('Abierta','Cerrada','Espera') DEFAULT NULL,
+  `fecha_apertura` date DEFAULT NULL,
+  `fecha_cierre` date DEFAULT NULL,
+  `monto_efectivo_apertura` double DEFAULT '0',
+  `monto_efectivo_cierre` double DEFAULT '0',
+  `monto_tarjeta_cierre` double DEFAULT '0',
+  `monto_sinpe_cierre` double DEFAULT '0',
+  `ingresado_por` int(10) unsigned NOT NULL,
+  `modificado_por` int(10) unsigned DEFAULT NULL,
+  `fecha_modificacion` date DEFAULT NULL,
+  `fecha_creacion` date NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_session_pos_terminal_usuario` (`terminal_usuario_id`),
+  KEY `fk_session_pos_ingresado_por_user` (`ingresado_por`),
+  KEY `fk_session_pos_modiificado_por_user` (`modificado_por`),
+  CONSTRAINT `fk_session_pos_ingresado_por_user` FOREIGN KEY (`ingresado_por`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_session_pos_modiificado_por_user` FOREIGN KEY (`modificado_por`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_session_pos_terminal_usuario` FOREIGN KEY (`terminal_usuario_id`) REFERENCES `terminal_usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+
+
+

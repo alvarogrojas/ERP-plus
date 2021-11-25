@@ -1,0 +1,12 @@
+ALTER TABLE terminal ADD bodega_id int UNSIGNED;
+ALTER TABLE terminal ADD CONSTRAINT fk_terminal_bodega FOREIGN KEY ( bodega_id )
+REFERENCES bodega( id ) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
+############     INIT POS                             ############
+insert into terminal values(1,'POS','Heredia','Cerrada',now(),now(), 1);
+insert into terminal values(2,'POS2','Heredia','Cerrada',now(),now(), 2);
+
+insert into terminal_usuario values(1,1,1,'Activo');
+
+########################

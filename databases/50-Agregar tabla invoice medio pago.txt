@@ -1,0 +1,18 @@
+
+CREATE TABLE `invoice_medio_pago` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `invoice_id` int(10) unsigned NOT NULL,
+  `medio_pago_id` int(10) unsigned NOT NULL,
+  `deposito_detalle` varchar(100) DEFAULT NULL,
+  `banco` varchar(50) DEFAULT NULL,
+  `estado` enum('Activo','Inactivo') NOT NULL DEFAULT 'Activo',
+  `monto_pago` double DEFAULT '0',
+  `detalle` varchar(150) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_invoice_medio_pago_invoice` (`invoice_id`),
+  KEY `fk_invoice_medio_pago` (`medio_pago_id`),
+  CONSTRAINT `fk_invoice_medio_pago` FOREIGN KEY (`medio_pago_id`) REFERENCES `medio_pago` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_invoice_medio_pago_invoice` FOREIGN KEY (`invoice_id`) REFERENCES `invoice` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+

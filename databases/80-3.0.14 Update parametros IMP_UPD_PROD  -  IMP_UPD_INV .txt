@@ -1,0 +1,7 @@
+
+-- Query con los valores correctos iniciales  para ('IMP_UPD_PROD', 'IMP_UPD_INV');
+update general_parameter
+set val = '1', int_val = null
+where code in  ('IMP_UPD_PROD', 'IMP_UPD_INV');
+
+

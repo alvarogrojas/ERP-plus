@@ -1,0 +1,12 @@
+ALTER TABLE invoice ADD exchange_rate_id int UNSIGNED;
+ALTER TABLE invoice ADD CONSTRAINT fk_invoice_exchange_rate FOREIGN KEY ( exchange_rate_id ) 
+REFERENCES exchange_rate( id ) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
+
+
+
+
+
+
+

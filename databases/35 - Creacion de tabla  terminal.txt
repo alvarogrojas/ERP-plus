@@ -1,0 +1,14 @@
+
+
+CREATE TABLE `terminal` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(32) DEFAULT '',
+  `direccion` varchar(64) DEFAULT '',
+  `estado` enum('Abierta','Cerrada','Inactiva') NOT NULL DEFAULT 'Cerrada',
+  `create_at` date DEFAULT NULL,
+  `update_at` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+

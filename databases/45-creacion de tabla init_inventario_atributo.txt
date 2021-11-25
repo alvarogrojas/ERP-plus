@@ -1,0 +1,17 @@
+
+CREATE TABLE `init_inventario_atributo` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `init_inventario_detalle_id` int(10) unsigned NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `valor` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_init_inventario_atributo_init_inventario_detalle` (`init_inventario_detalle_id`),
+  CONSTRAINT `fk_init_inventario_atributo_init_inventario_detalle` FOREIGN KEY (`init_inventario_detalle_id`) REFERENCES `init_inventario_detalle` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+
+

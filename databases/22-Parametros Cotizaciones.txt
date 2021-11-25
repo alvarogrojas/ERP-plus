@@ -1,0 +1,105 @@
+-- Parametros cotizaciones
+
+-- Parametro  COT_CONS_MES
+INSERT INTO general_parameter (id,
+  idx,
+  code,
+  val,
+  name,
+  status,
+  description,
+  create_date,
+  id_user,
+  update_date,
+  type,
+  int_val)
+SELECT
+ 0,
+  idx,
+  'COT_CONS_MES',
+  val,
+  'Mes consecutivo COT',
+  status,
+  'Mes consecutivo de las cotizaciones',
+  current_date() ,
+  id_user,
+ current_date(),
+  type,
+  int_val
+FROM general_parameter
+where code = 'POP_RPO_MES';
+
+
+-- Parametro  COT_NUMBER
+INSERT INTO general_parameter (id,
+  idx,
+  code,
+  val,
+  name,
+  status,
+  description,
+  create_date,
+  id_user,
+  update_date,
+  type,
+  int_val)
+SELECT
+ 0,
+  idx,
+  'COT_NUMBER',
+  val,
+  'Numero de cotizacion',
+  status,
+  'Numero de un documento de cotizacion',
+  current_date() ,
+  id_user,
+ current_date(),
+  type,
+  int_val
+FROM general_parameter
+ where code = 'POP_PRO';
+
+
+-- Parametro  COT_PREFIX
+INSERT INTO general_parameter (id,
+  idx,
+  code,
+  val,
+  name,
+  status,
+  description,
+  create_date,
+  id_user,
+  update_date,
+  type,
+  int_val)
+SELECT
+ 0,
+  idx,
+  'COT_PREFIX',
+  '',
+  'Prefijo de la cotizacion',
+  status,
+  'Prefijo codigo de cotizacion',
+  current_date() ,
+  id_user,
+ current_date(),
+  'STRING',
+  0
+FROM general_parameter
+ where code = 'POP_PRO';
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

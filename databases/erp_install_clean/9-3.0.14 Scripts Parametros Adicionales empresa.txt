@@ -1,0 +1,176 @@
+-- Scripts de inicializacion Parametros Adicionales empresa 
+
+
+-- PARAMETRO CUR_PAY_ROLL Actualizar el id de la moneda  con se haran los calculos de la planilla
+update general_parameter 
+set val = '1' -- Setear este valor de acuerdo a la moneda del sistema para calculos de planilla, en este caso 1 significa colones
+where code = 'CUR_PAY_ROLL';
+
+
+-- PARAMETRO CUR_CLOSURE Actualizar el id de la moneda  con se haran los calculos del cierre contable
+update general_parameter 
+set val = '1' -- Setear este valor de acuerdo a la moneda del sistema para calculos del  cierre contable, en este caso 1 significa colones
+where code = 'CUR_CLOSURE';
+
+
+
+-- PARAMETRO EMPRESA_INFO:  Parametro para actualizar la información general de la empresa, incluye Nombre de la empresa, cedula juridica, direcccion, sitio web y teléfono, campo description
+update general_parameter 
+set description = "IngPro S.A ## Ced. Jurdica 3101629356 ## Del colegio Francisca Carrazco, 100 este ## y 50 Sur , Arenilla, Guadalupe,  Cartago ## www.ingpro-tec.com ## Tel/Fax 2551-7118"
+where code = 'EMPRESA_INFO'
+and name = 'Informacion';
+
+
+-- PARAMETRO SCHED_PAY Actualizar la cantidad de meses hacia atras a partir de donde generar el flujo de caja
+update general_parameter 
+set val = '0' -- Setear este valor de acuerdo a la cantidad de meses hacia atras  del flujo de caja
+where code = 'SCHED_PAY'
+and name = 'Meses pasados';
+
+
+-- PARAMETRO SCHED_PAY Actualizar la cantidad de meses haciea adelante a para generar  el flujo de caja
+update general_parameter 
+set val = '6' -- Setear este valor de acuerdo a la cantidad de meses hacia adelanta para proyectar el flujo de caja
+where code = 'SCHED_PAY'
+and name = 'Meses futuros';
+
+
+
+
+
+-- Creacion de parametro 'POS_TIQUETE_BOTTOM'
+INSERT INTO general_parameter
+	( id,
+      idx,
+      code, 
+      val, 
+      name,
+     `status`,
+      description,
+      create_date,
+      id_user,
+  update_date, 
+       `type`,
+      int_val)
+VALUES ( 0,
+         1,
+        'POS_TIQUETE_BOTTOM',
+        'Documento emitido conforme lo establecido en la resolución Factura Eléctrinica, No DGT-R-033-2019 del veintisiete de junio de dos mil diecinueve de la Dirección Genereal de Tributación', -- Asignar la resolucion vigent e al momento de implantar el sistema',   
+        'Footer POS', -- nombre del parametro
+        'Activo',
+        'Resolucion No DGT-R-033-2019',
+        current_date(), 
+        1,
+        current_date(),
+        'STRING',
+        null );
+
+
+
+-- creacion de parametro POS_SHORT_ADDRESS                                    
+INSERT INTO general_parameter
+	( id,
+      idx,
+      code, 
+      val, 
+      name,
+     `status`,
+      description,
+      create_date,
+      id_user,
+  update_date, 
+       `type`,
+      int_val)
+VALUES ( 0,
+         1,
+        'POS_SHORT_ADDRESS',
+        'El Guarco Cartago', -- Asignar la direccion corta para el pos en este campo    
+        'Direccion Corta',  -- Nombre del parametro  
+        'Activo',
+        'El Guarco Cartago', -- Asignar una descripcion para la direccion corta del pos en este campo
+        current_date(), 
+        1,
+        current_date(),
+        'STRING',
+        null );
+
+
+
+
+-- PARAMETRO EINV_LEYENDA Actualizar la leyenda con el articulo 460 del codigo de comecio, en el campo description
+update general_parameter 
+set description = 'Esta factura constituye titulo ejecutivo y se rige por el artculo 460 del codigo de comercio y devenga interes de 4% mensual apartir del vencimiento. En caso de devolucin presente este documento en un plazo mximo de 8 das. Autorizado mediante la resolucion DGT-R-033-2019 del veinte de junio de dos mil diecinueve de la Direccion General de Tributacion.'
+where code = 'EINV_LEYENDA'
+and name = 'Leyenda';
+
+
+
+-- PARAMETRO REGIMEN_SIMPLIFICADO_TIQUETE Actualizar flag para regimen simplificado
+update general_parameter 
+set val = '0' -- Por defecto se coloca el valor en cero que indica que no es de regimen simplificado, si coloca 1 significa que no es de regimen simplificaod
+where code = 'REGIMEN_SIMPLIFICADO_TIQUETE'
+and name = 'Flag para regimen simplificado';
+
+
+-- PARAMETRO POS_TIQUETE_BOTTOM Leyenda de resolucion  de tributacion para emision de la factura electronica No DGT-R-033-2019
+update general_parameter 
+-- Modificar el valor de val solo si cambia la resolucion de tributacion para la emision de factura electronica
+set val = 'Documento emitido conforme lo establecido en la resolución Factura Eléctrinica, No DGT-R-033-2019 del veintisiete de junio de dos mil diecinueve de la Dirección Genereal de Tributación',
+description = 'El Guarco, Cartago'  -- Modificar la descripción segun la ubicacion de la empresa
+where code = 'PARAMETRO_POS_TIQUETE_BOTTOM';
+
+
+-- PARAMETRO POS_SHORT_ADDRESS Direccion corta para mostrar en el pos
+update general_parameter 
+-- Modificar el valor de val y description de acuerdo a la  ubicación de la empresa
+set val  = 'El Guarco, Cartago',
+description = 'El Guarco, Cartago'
+where code = 'POS_SHORT_ADDRESS';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

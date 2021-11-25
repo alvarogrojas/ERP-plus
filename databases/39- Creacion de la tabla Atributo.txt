@@ -1,0 +1,13 @@
+
+CREATE TABLE `atributo` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `familia_id` int(10) unsigned DEFAULT NULL,
+  `nombre` varchar(100) DEFAULT NULL,
+  `estado` enum('Activo','Inactivo') DEFAULT 'Activo',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unq_atributos_nombre_familia` (`familia_id`,`nombre`),
+  CONSTRAINT `fk_atributo_familia` FOREIGN KEY (`familia_id`) REFERENCES `familia` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+

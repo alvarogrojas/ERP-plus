@@ -1,0 +1,86 @@
+-- Scripts de inicializacion consecutivos electronicos empresa
+
+
+/* TODO: Descomentar estas sentencias  y agregar el actual_id solicitado por el cliente */
+
+-- Consecutivo nota credito ventas 
+/*update factura_consecutivo
+set actual_id = 0 -- Asignar el valor indicado por el cliente 
+where documento = 'NOTACREDITO';*/
+
+
+-- consecutivo factura electronica
+/*update factura_consecutivo
+set actual_id = 0 -- Asignar el valor indicado por el cliente 
+where documento = 'FE';*/
+
+-- consecutivo de nota de credito electronica
+/*update factura_consecutivo
+set actual_id = 0 -- Asignar el valor indicado por el cliente 
+where documento = 'NCE';*/
+
+-- consecutivo de movimiento de rechazo  electronico
+/*update factura_consecutivo
+set actual_id = 0 -- Asignar el valor indicado por el cliente 
+where documento = 'MRE';*/
+
+-- consecutivo de movimiento de confirmacion  electronico
+/*update factura_consecutivo
+set actual_id = 0 -- Asignar el valor indicado por el cliente 
+where documento = 'MCE';*/
+
+-- consecutivo de factura de exportacion electronico
+/*update factura_consecutivo
+set actual_id = 0 -- Asignar el valor indicado por el cliente 
+where documento = 'FEE';*/
+
+
+-- consecutivo de tiquete electronico
+/*update factura_consecutivo
+set actual_id = 0 -- Asignar el valor indicado por el cliente 
+where documento = 'TQ';*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

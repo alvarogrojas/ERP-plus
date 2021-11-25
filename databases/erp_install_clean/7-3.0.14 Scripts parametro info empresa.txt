@@ -1,0 +1,71 @@
+-- Actualizacion de el parametro INGP_INF
+
+
+-- PARAMETRO NAME  Actualizar el nombre de la empresa
+update general_parameter
+set val = '' -- Colocar el nombre de la empresa
+where code = 'INGP_INF'  and name = 'NAME';
+
+
+-- PARAMETRO IDTYPE Actualizar el tipo de empresa juridica
+update general_parameter
+set val = '' -- Colocar codigo de dos digitos del tipo de empresa juridica
+where code = 'INGP_INF'  and name = 'IDTYPE';
+
+
+
+
+-- PARAMETRO CEDULA Actualizar la cedula juridica de la empresa
+update general_parameter
+set val = '' -- Colocar la cedula juridica de la empresa
+where code = 'INGP_INF'  and name = 'CEDULA';
+
+
+-- PARAMETRO PROVINCIA Actualizar la provincia de la empresa
+update general_parameter
+set val = '' -- Colocar un numero de 1 a 7 para la provincia
+where code = 'INGP_INF'  and name = 'PROVINCIA';
+
+
+
+-- PARAMETRO CANTON Actualizar el canton de la empresa
+update general_parameter
+set val = '' -- Colocar un codigo de 2 digitos para el canton
+where code = 'INGP_INF'  and name = 'CANTON';
+
+
+-- PARAMETRO DISTRITO Actualizar el distrito de la empresa
+update general_parameter
+set val = '' -- Colocar un codigo de 2 digitos para el distrito
+where code = 'INGP_INF'  and name = 'DISTRITO';
+
+-- PARAMETRO BARRIO Actualizar el barrio de la empresa
+update general_parameter
+set val = '' -- Colocar un codigo de 2 digitos para el distrito
+where code = 'INGP_INF'  and name = 'BARRIO';
+
+
+-- PARAMETRO ADDRESS Actualizar direccion 
+update general_parameter
+set val = '', -- colocar direccion corta de la empresa
+    description = '' -- colocar direccion larga de la empresa 
+where code = 'INGP_INF'  and name = 'ADDRESS';
+
+
+ 
+-- PARAMETRO EMAIL Actualizar el correo de la empresa
+update general_parameter
+set val = '', -- colocar el correo de la empresa 
+    description = 'Correo de la empresa'  
+where code = 'INGP_INF'  and name = 'EMAIL';
+
+
+-- PARAMETRO PHONE Actualizar el telefono de la empresa
+update general_parameter
+set val = '', -- colocar el telefono  de la empresa 
+    description = 'Telefono de la  empresa'  
+where code = 'INGP_INF'  and name = 'PHONE';
+
+
+
+

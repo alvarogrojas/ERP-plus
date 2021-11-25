@@ -1,0 +1,6 @@
+-- Setear la moneda default del sistema
+update currency set is_default = 1
+where name  = 'Colon';
+
+update currency set is_default = 0 
+where name = 'Dolar';

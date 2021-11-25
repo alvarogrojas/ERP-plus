@@ -1,0 +1,145 @@
+-- Scripts de inicializacion de consecutivos de la empresa
+
+
+-- PARAMETRO POC_CLI Actualizar numero de orden de compra de cliente
+update general_parameter
+set val = '',  
+int_val = 0 -- Colocar el valor deseado para el numero inicial de orden de compra, dejarlo en cero si asi lo desea
+where code = 'POC_CLI';
+
+
+-- PARAMETRO POP_PRO Actualizar numero de orden de compra de un proveedor
+update general_parameter
+set val = '',  
+int_val = 0 -- Colocar el valor deseado para el numero inicial de orden de compra, dejarlo en cero si asi lo desea
+where code = 'POP_PRO';
+
+-- PARAMETRO INVOICE_NUM Actualizar el numero de factura del sistema 
+update general_parameter
+set val = '',  
+int_val = 0 -- Colocar el valor deseado para el numero inicial de la factura, dejarlo en cero si asi lo desea
+where code = 'INVOICE_NUM';
+
+
+
+-- PARAMETRO POP_RPO_MES Valor del consecutivo del  mes para la  Orden de compra del proveedor
+update general_parameter
+set val = '' -- Coloque el valor del mes de 1  a 12 
+where code = 'POP_RPO_MES';
+
+
+-- PARAMETRO COT_CONS_MES Valor del consecutivo del  mes para las cotizaciones
+update general_parameter
+set val = '' -- Coloque el valor del mes de 1  a 12 
+where code = 'COT_CONS_MES';
+
+
+-- PARAMETRO COT_NUMBER Valor  para el numero de cotizacion 
+update general_parameter
+set int_val = 0 -- Coloque el valor inicial del consecutivo de cotizaciones  
+where code = 'COT_NUMBER';
+
+-- PARAMETRO COT_PREFIX Valor para el prefijo de la cotizacion
+update general_parameter
+set val = '' -- Coloque un prefijo para la cotizacion si asi lo desea  
+where code = 'COT_PREFIX';
+
+
+
+-- PARAMETRO REQ_CONS_MES Consecutivo del mes para la requisicion
+update general_parameter
+set val = '' -- Coloque un valor para el mes inicial de la requisicion  entre 1 y 12  
+where code = 'REQ_CONS_MES';
+
+
+
+
+-- PARAMETRO REQ_NUMBER  para numero de requisicion
+update general_parameter
+set int_val = 0 -- Coloque un valor para inicial para el consecutivo de requisicion  
+where code = 'REQ_NUMBER';
+
+
+
+-- PARAMETRO REQ_PREFIX  prefijo para el codigo de la requisicion
+update general_parameter
+set val = '' -- Coloque un valor para inicial para prefijo de la requisicion  
+where code = 'REQ_PREFIX';
+
+
+-- PARAMETRO NCR_CONS_MES consecutivo del mes de la nota de credito
+update general_parameter
+set val = '' -- Digite el mes consecutivo para la nota de credito    
+where code = 'NCR_CONS_MES';
+
+-- PARAMETRO NCR_NUMBER  numero de la  nota de credito
+update general_parameter
+set int_val = 0 -- Digite el numero inicial para las notas de credito    
+where code = 'NCR_NUMBER';
+
+-- PARAMETRO NCR_PREFIX  prefijo para el codigo de la nota de credito
+update general_parameter
+set val = '' -- Digite el prefijo para los codigos de nota de  credito    
+where code = 'NCR_PREFIX';
+
+
+-- PARAMETRO DEV_CONS_MES consecutivo del mes para las devoluciones
+update general_parameter
+set val = '' -- Digite el consecutivo del mes para las devoluciones, debe estar entre 1 y 12    
+where code = 'DEV_CONS_MES';
+
+
+
+-- PARAMETRO DEV_NUMBER  numero de consecutivo para las  devoluciones
+update general_parameter
+set int_val = 0 -- Digite el consecutivo para las devoluciones    
+where code = 'DEV_NUMBER';
+
+
+-- PARAMETRO DEV_PREFIX para el codigo de las devoluciones  
+update general_parameter
+set val = '' -- Digite el prefijo  para las devoluciones    
+where code = 'DEV_PREFIX';
+
+  
+-- PARAMETRO TRSL_CSC_MES para el consecutivo de mes de un traslado
+update general_parameter
+set val = '' -- Digite el consecutivo de mes para un traslado de 1 a 12   
+where code = 'TRSL_CSC_MES';
+
+
+
+-- PARAMETRO TRSL_NUMBER para consecutivo de un traslado de bodega
+update general_parameter
+set int_val = 0 -- Digite el consecutivo inicial para un traslado de bodega   
+where code = 'TRSL_NUMBER';
+
+
+-- PARAMETRO TRSL_PREFIX prefijo par un traslado de bodega
+update general_parameter
+set val = '' -- Digite el prefijo para un codigo de  traslado de bodega  
+where code = 'TRSL_PREFIX';
+
+
+
+-- PARAMETRO BPNC_CON_MES consecutivo del mes de un bill pay nota credito
+update general_parameter
+set val = '' -- Digite el consecutivo del mes inicial de 1 a 12 para un bill pay nota credito  
+where code = 'BPNC_CON_MES';
+
+
+
+-- PARAMETRO BPNC_NUMBER consecutivo para un bill pay nota de credito
+update general_parameter
+set int_val = 0 -- Digite el consecutivo  inicial  un bill pay nota credito  
+where code = 'BPNC_NUMBER';
+
+
+
+
+-- PARAMETRO BPNC_PREFIX consecutivo para un bill pay nota de credito
+update general_parameter
+set val = 0 -- Digite el prefijo para un codigo de un bill pay nota de credito  
+where code = 'BPNC_PREFIX';
+
+

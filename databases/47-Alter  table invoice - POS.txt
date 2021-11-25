@@ -1,0 +1,16 @@
+ALTER TABLE invoice ADD session_pos_id int UNSIGNED DEFAULT NULL;
+ALTER TABLE invoice ADD CONSTRAINT fk_invoice_session_pos FOREIGN KEY ( session_pos_id ) 
+REFERENCES  session_pos( id ) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+ALTER TABLE invoice ADD tipo_transaccion enum('TIQUETE', 'FE'  ) DEFAULT 'FE'; 
+
+
+
+
+
+
+
+
+
+
+
